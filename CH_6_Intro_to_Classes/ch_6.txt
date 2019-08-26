@@ -1,0 +1,142 @@
+====Chapter 6: Object-Oriented Programming (intro to Classes):====
+
+UNDERSTANDING OBJECT-ORIENTED PROGRAMMING: \\
+Terminology from C (C is a PROCEDURAL language as opposed to Object Oriented Language): \\
+ 1. PROCEDURE - smaller units of repeatable activities (functions: add(a,b){return (a + b)}) \\
+ 2. STRUCTURES - packages of assembled data (can't containt functions, but can contain pointers to functions) \\
+ 3. PROCEDURAL - C is a PROCEDURAL language as opposed to Object Oriented Language which makes C difficult to manage, maintain and extend. \\
+Object-Oriented Languages build a strong link between the Data Structures and the Methods that manipulate that Data and have a closer fit to the way humans think, improving communication and improving the quality of delivered software. C++ was created as a bridge between Object-Oriented Programming and C. \\
+When creating a variable, its TYPE tells you: \\
+ 1. The amount of memory the variable occupies. \\
+ 2. What kind of information it can hold. \\
+ 3. What kind of actions can be performed on them. \\
+In C, when creating types with a struct, next disadvantages are suffered: \\
+ 1. Structs and the functions that operate on them aren't cohesive wholes meaning that the libraries' header files have to be referred to find availablle functions that accept parameters of the required type. \\
+ 2. The data of a Struct is not protected and can change at any instance which may result in interference. \\
+ 3. The built-in operators don't work on structs. For example, you cannot add two structures as possible with the Objects created using Classes. \\
+
+In C++, a Class can be used to create a type encapsulates data and functions under one Object! Thus, using this custom type we can create an object that has: \\
+ 1. Data (normally referred as a Data Member) which is simply saying a storage element. \\
+ 2. Methods which is simply saying a set of functions. Thus, an Object just like anything else in this world has Physical Features (Data) and Functionality (Methods) that can be performed on its data. \\
+
+ It should be noted that declaring a class d.n. allocate memory. Class is nothing more that a Custom Type you can create. This custom type can later be used to create Object which will consume some of the available memory. In other words, class allows you to come up with all the TYPES let's say animals (puppies and kittens) and it can then be used to create OBJECTS let's say a puppy or a cat with a particular name (Rexy, Bentley). \\
+
+Declaring a Class, syntax: \\
+
+  class Cat
+  {
+  unsigned int itsAge;
+  unsigned int itsWeight;
+  void meow();
+  };
+
+This class can then be used just like any type to create an Instance of an Object: \\
+Cat Frisky; \\
+where Cat is a type just like int (example: int var1), and Frisky is the object just like var1 (example: int var1). \\
+
+To access a Class Member, the dot operator (.) has to be used just as it's done with Structures: \\
+
+  Frisky.itsAge = 5;
+  Frisky.meow();
+
+House Standard - is a particular Naming Standard used by a particular company of programmers. \\
+
+Class Access; can be of next 3 types: \\
+ 1. Public (visible to everyone) - can be accessed by the Clients from the outside world! \\
+ 2. Protected (visible to base class and derived classes) - can be accessed only within methods of the class itself or the methods of the derived classes! \\
+ 3. Private (visible to base class only) - can be accessed only within methods of the class itself! \\
+
+Specifying ACCESS, syntax: \\
+<code>
+  class Cat
+  {
+  public:
+  void setAge(unsigned int age){itsAge = age};
+  unsigned int getAge();
+  void setWeight(unsigned int weight){itsWeight = weight};
+  unsigned int getWeight();
+  void meow();
+
+  private:
+  unsigned int itsAge;
+  unsigned int itsWeight;
+  };
+</code>
+
+Notice, the access keyword (PUBLIC, PRIVATE) does NOT require any blocking {}. Everything after keyword PRIVATE is of private access, and everything after keyword PUBLIC is of public access. \\
+
+Use the PRIVATE/PROTECTES access' to isolate the declared data from the outside world. These access types require PUBLIC methods (called ACCESSOR FUNCTIONS) to be used to allow the outside world to manipulate this private data content. Thus, we introduce the concept of SETS & GETS. The SETS & GETS methods are public functions used to write or read the  private/protected data. \\
+ 
+The benefit of SETS & GETS is that if the names of the data members is to be revised at some point, let's say from itsAge to catAge, the code that accesses an instance's age through the getAge() method doesn't have to change. Only the getAge() method implementation has to be revised to read the content of the right data member! If we used a direct access (Frisky.itsAge = 5;), every line of code where the Frisky's age is set has to be revised as well which is a problem. In case of the method getAge, we don't need to change anything in user's code, only the method implemented by the developer has to change (setAge(){itsAge = 5};)! \\
+
+CONSTRUCTOR: \\
+ 1. Special member f-ion used to initialize the data members of a class. \\
+ 2. Can accept argument (optional), but can NOT return data. \\
+ 3. Is a class method but MUST have the same name as the class. \\
+ 4. The DEFAULT CONSTRUCTOR takes no argument, performs nothing. It's just there, but does nothing. If you provide a constructor, the compiler will not provide a default one! This can be dangerous when the constructor provided by user accepts arguments but does not have default parameters for those arguments! \\
+
+DESTRUCTOR: \\
+ 1. Used to cleanup during the delete of your object. \\
+ 2. Does NOT accept arguments. Does NOT return values. \\
+ 3. Has the same name as class with tilde in front of it. Ex: ~Cat(); \\
+ 4. The DEFAULT DECONSTRUCTOR performs nothing. It's just there, but does nothing. \\
+
+CONST Member Function: \\
+ 1. when method is included with a CONST keyword after the argument list parentheses, the method is restricted from changing the content of the data members. Thus, it's a read only method. \\
+ 2. It's common for an accessor function to be of const type. Ex: void getMethod() const; \\
+ 3. It has mainly a debugging purpose. It's a good practice to declare as many methods of CONST type as possible. This allows the compiler to catch your errors and prevents serious bugs. \\
+
+Clients: parts of the program that create and use Objects of the class you provide. \\
+
+Class Interface: is the Declaration of the class. It's called Interface since the user uses the class Declaration as a reference to how to use the class. \\
+
+
+
+
+  #include <iostream>
+  
+  // Class Interface starts here and strentches through the next 23 lines:
+  class Cat
+  {
+  public:
+  
+  // CONSTRUCTOR:
+  	Cat(int age = 1, int weight = 5) { itsAge = age; itsWeight = weight; };
+  
+  // DESTRUCTOR:
+  	// notice, even so the DESTRUCTOR doesn't do anything, we still have to define it by using an empty block { } or a cout statement:
+  	~Cat() { std::cout << "Destructor envoked; it's content could've been left empty;\n"; }; 
+  
+  // PUBLIC ACCESSORs:
+	// Putting the definition of this method into the class interface make this method's implementation of type INLINE. 
+	// Notice, since this is a SET kind of method, it is not of a const type.
+  	void setAge(int age) { itsAge = age; };
+  
+  	// Putting the definition of this method into the class interface make this method's implementation of the type INLINE. 
+	// Also, using the const keyword right after the method's tag, we restrict this method from being able to change 
+	// the content of data members:int getAge() const { return itsAge; }; 
+  	void setWeight(unsigned int weight) { itsWeight = weight; };
+  	int getWeight() const { return itsWeight; };
+  
+  // OUR CAT CAN MEOW NOW:
+  	void meow() const { std::cout << "Meow-meow. Feed me, you, B@$T@ЯD. \n"; };
+  
+  private:
+  	// All the data members are private:
+  	int itsAge;
+  	int itsWeight;
+  };
+  
+  int main()
+  {
+  	// Object Frisky is instantiated by the Client:
+  	Cat Frisky(10,10);
+  	std::cout << "Frisky is a cat that is " << Frisky.getAge() << " years old. \n";
+  	std::cout << "Frisky's weight is " << Frisky.getWeight() << " kilos. \n";
+  	Frisky.setAge(5);
+  	Frisky.setWeight(15);
+  	std::cout << "Frisky is a cat that is " << Frisky.getAge() << " years old \n";
+  	std::cout << "Frisky's weight is " << Frisky.getWeight() << " kilos. \n";
+  	Frisky.meow();
+  	system("pause");
+  }
