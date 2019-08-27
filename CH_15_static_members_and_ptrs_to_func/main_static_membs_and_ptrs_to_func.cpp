@@ -1,31 +1,3 @@
-//	SPECIAL CLASSES AND FUNCTIONS: USED TO SHARE DATA AMONG ALL INSTANCES OF A PARTICULAR CLASS!
-//	1.	A PUBLIC STATIC MEMBER VARIABLES: Shared among all instances of a class (similar to global variables). They are created outside the class they belong to and thus they exist even if an object of 
-//		the class was not created.
-//	2.	Static Members can be accessed using NON STATIC MEMBER FUNCTIONS, but this requires an object of the class it belong to to be created which sucks (REQUIRES AN OBJECT INSTANTIATION)
-//	3.	To provide access to STATIC DATA MEMBER without instantiating an object of the corresponding Class, a STATIC MEMBER FUNCTION has to be provided (DOES NOT REQUIRE AN OBJECT INSTANTIATION)
-//		It should be noted that static member functions:
-//		-	DO NOT have access to THIS pointer and CANNOT be made const as a result.
-//		-	DO NOT have access to NON-STATIC MEMBER VARIABLES
-//		-	CAN BE CALLED EVEN WHEN AN OBJECT OF THE CLASS THEY BELONG TO DOES NOT EXIST (was not created).
-//	4.	POINTERS TO A FUNCTION:
-//			Declaring a pointer to a function:				ReturnType (* pFuncName)(int arg1);
-//				Also, derefencing a pointer to a function is optional and the function can be called using both: pFuncName(x) or  (*pFuncName)(x)
-//			Function that returns a pointer:				ReturnType * FunctionName(int arg1);
-//		Benefits of the pointers to functions:
-//		-	Eliminate duplicate code.--
-//		-	Clarify a program.
-//		-	Enable tables of functions that can be chosen from during run-time.
-//		It should be noted that Object-Oriented programming does not normally require pointers to functions. If an array of function pointers is used, the rpogrammer should ask himself whether an
-//		array of appropriate objects is what actually needed instead!
-//	5.	ARRAYS OF POINTERS TO FUNCTIONS:
-//			Declaring an array of pointers to functions:	ReturnType (*pFuncArray[ArraySize])(type Param1, typeParam2);
-//	6.	PASSING A FUNCTION POINTER TO A FUNCTION
-//	7.	Using TYPEDEF with function pointers:
-//			Next syntax is used:								typedef ReturnType(*TYPE_NAME) (int &, int &); 
-//			which allows us to declare a function pointer as:	TYPE_NAME pFunc; 
-//	8.	POINTERS TO MEMBER FUNCTIONS (Should be avoided): 
-//			-	Used in the same way as pointers to functions, but require an object of the correct class on which to invoke the pointer
-//			-	When the pointer to a member function of the DERIVED CLASS is set to point to an object of the DERIVED CLASS, virtualization holds true! 
 #include <iostream>
 using namespace std;
 

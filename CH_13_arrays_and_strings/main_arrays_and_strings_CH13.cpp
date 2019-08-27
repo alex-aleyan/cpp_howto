@@ -1,32 +1,3 @@
-// CHAPTER 13: Managing Arrays and Strings:
-//	1.	Using Arrays of Objects: When declaring an ARRAY OF OBJECTs, the OBJECT CONSTRUCT MUST BE the DEFAULT CONSTRUCT that takes NO ARGUMENTS, but it can be
-//		used to initialize value. Example : Cat(){itsAge = 1; itsWeight = 5;}
-//	2.	To declare AN ARRAY OF POINTERS, use next syntax: Type *pArray[5]; // An array of pointers
-//	3.	To allocate an array on FREE STORE (HEAP), use next syntax: new ArrayOnHeap[500];
-//		1)	To declare a POINTER TO AN ARRAY allocated of the FREE STORE (HEAP), use this syntax: Type *ptr = new Array[500];
-//	4.	When using a pointer to an array, we can access Nth element either using the array itself: array[N-1]; or using the pointer as: *(ptr+(N-1))
-//	5.	To free an array of memory allocated on heap using the pointer, next syntax MUST be used: delete [] ptr; if the bracket symbol is not used, only the
-//		first element will be deleted.
-//	6.	When using a pointer to an array allocated on the heap ( Type *ptr = new Type[N];), you can itterate through the array using the pointer arithmetics, or
-//		the pointer itself can be used as if it was the array, for example: ptr[i] = 5; This is illustrated in #7 code section.
-//	7.	Resizing an array at allocation. See code below.
-//	8.	C-style char Arrays and Strings: C-style strings are terminated by a null character ( '\0' ). There are 2 ways to declare and initialize C-style strings:
-//		1)	char cStyleString[] = {'H', 'e', 'l', 'l', 'o', ' ', 'W' 'o' 'r' 'l' 'd', '\0'};
-//		2)	char cStyleString[] = "Hello World"; // Null character is added by compiler automatically!
-//	9.	SEE THE APPENDIX E "A LOOK AT LINKED LISTS"
-//		1) Ordered Collection - Each member is in sorted order.
-//		2) Set - No member appears more than once.
-//		3) Dictionary - This uses matched pairs in which one value acts as a key to retrieve the other value.
-//		4) Sparse Array - Indices are permitted for a large set, but only those values actually added to the array consume memory. Thus, you can ask for
-//						  SparseArray[5] or SparseArray[200] , but it is possible that memory is allocated only for a small number of entries!
-//		5) Bag - An unordered collection that is added to and retrieved in indetermined order.
-
-//		Note: By overloading the index operator [], you can turn a linked list into an ordered collection. By excluding duplicats, you can turn a collection
-//		into a set. If each object in the list has a pair of matched values, you can use a linked list to build a dictionary or a sparse array.
-//	10. You can use pointers to combine 2 arrays into 1 and with the string you can use strcat() to concatenate them.
-
-
-
 #include <iostream>
 
 class Cat
