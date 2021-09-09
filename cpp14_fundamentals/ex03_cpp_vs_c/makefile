@@ -8,3 +8,6 @@ DMACROS=-DMAXLINE=1024
 all:
 	$(CC) $(CC_OPTIONS) $(DMACROS) helloworld.cpp -o helloworld.run
 
+clean:
+	rm *.run
+
