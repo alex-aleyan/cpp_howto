@@ -40,16 +40,16 @@ int main (){
 
     myClass aClass_o;
 
-    //C++ Style
+    //C++ Style to allocate memory dynamically:
     char *s = new char[100]; 
 
-    // C Style
+    // C Style to allocate memory dynamically:
     char *t = (char *) malloc(100 * sizeof(char)); 
     
-    //C++ Style
+    //C++ Style to de-allocate memory:
     delete[] s;
 
-    // C Style
+    // C Style to de-allocate memory:
     free(t);    
 
     cout << "Hellow World!!!\n"; 
