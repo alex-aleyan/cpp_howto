@@ -22,7 +22,7 @@ struct myStruct {
 enum class Size {XS, S, M ,L ,XL};  // <- Preferred method is using C++ enum class; are not int and checked at compile time.
 typedef enum {FLASE, TRUE} Boolean; // C style (bool is a fundamental type in C++)
 
-int main (){
+int main (int argc, char * argv[]){
 
     myClass aClass_o;
 
@@ -55,7 +55,29 @@ int main (){
     cout << "Standard Predefuned Macros:" \
          << "\n  Source File: " << __FILE__ \
          << "\n  Time: " << __TIME__ \
-         << "\n  Date: " << __DATE__ << "\n";
+         << "\n  Date: " << __DATE__ << "\n\n";
+
+
+
+    // Really, you should use "GNU getopt()" or "boost C++ libraries" instead of manual labor shown below:
+    cout << "CLI Arguments:\n";
+
+    if ( argc < 3 ) {
+        cerr << "Usage: " << argv[0] << " <option> FILE]\n" \
+             << "--find\tFind the file\n" \
+             << "--display\tDisplay the file\n\n" ;
+        return 1;
+    }
+
+    string arg = argv[1];
+
+    // check and print argv[1]
+    if (arg == "--find")          cout << "  find option\n";
+    else if ( arg == "--display") cout << "  display option\n";
+    else                          cout << "  invalid option\n";
+    
+    // print argv[2]
+    cout << "  argument[2]: " << argv[2] << "\n";
 
     return 0;
 
