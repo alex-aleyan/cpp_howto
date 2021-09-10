@@ -7,7 +7,10 @@
 
 
 using namespace std;
-//using namespace eg;
+
+// Notice we specify to use myClass only and not the whole "eg" namespace:
+using eg::myClass;
+
 
 // In C++ struct is a class whose members are public by default:
 struct myStruct {
@@ -23,10 +26,12 @@ struct myStruct {
 enum class Size {XS, S, M ,L ,XL};  // <- Preferred method is using C++ enum class; are not int and checked at compile time.
 typedef enum {FLASE, TRUE} Boolean; // C style (bool is a fundamental type in C++)
 
+
 int main (int argc, char * argv[]){
 
     // updated to use the eg namespace (instead of eg::, we could use "using namespace eg"):
-    eg::myClass aClass_o;
+    // eg::myClass aClass_o; 
+    myClass aClass_o;
 
     //C++ Style to allocate memory dynamically:
     char *s = new char[100]; 
