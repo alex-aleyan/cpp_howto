@@ -1,1 +1,1 @@
-(Wiki)[https://github.com/alex-aleyan/cpp_howto/wiki]
+[Wiki](https://github.com/alex-aleyan/cpp_howto/wiki)
