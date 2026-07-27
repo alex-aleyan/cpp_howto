@@ -35,3 +35,12 @@ Cat & Cat::operator= (const Cat & rhs)
     this->SetWeight(rhs.GetWeight());
     return *this; // where this is the pointer to the lhs object so we just reassigning it to itself. 
 }
+
+int  Cat::GetAge() const {return *itsAge;}
+
+int  Cat::GetWeight() const { return *itsWeight; }
+
+void Cat::SetAge(int age) { *itsAge = age; }
+
+void Cat::SetWeight(int weight) { *itsWeight = weight; }
+
