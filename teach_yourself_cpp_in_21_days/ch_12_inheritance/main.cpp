@@ -1,35 +1,41 @@
 #include <iostream>
 using namespace std;
+#include "Mammal.h"
 
 enum BREED {GOLDEN, CAIRN, DANDIE, SHETLAND, DOBERMAN, LAB, NUISANCE};
 
-class Mammal
-{
-public:
-	// constructor
-	//Mammal() :itsAge(2), itsWeight(5) { std::cout << "Mammal Constructor. \n"; }
-	Mammal(int age = 2, int weight = 5) :itsAge(age), itsWeight(weight) { std::cout << "Mammal Constructor. \n"; }
 
-		//#13: VIRTUAL COPY CONSTRUCTOR implementation using a COPY CONSTRUCTOR and a VIRTUAL CLONE() METHOD:
-		Mammal(const Mammal & rhs) : itsAge(rhs.GetAge()) { std::cout << "Mammal Copy Construct\n" ; }
-		virtual Mammal* Clone() { return new Mammal(*this); std::cout << "Mammal Virtrual Copy Construct\n";}
 
-	virtual ~Mammal() { std::cout << "Mammal Destructor. \n"; }
+// class Mammal
+// {
+// public:
+// 	// constructor
+// 	//Mammal() :itsAge(2), itsWeight(5) { std::cout << "Mammal Constructor. \n"; }
+// 	Mammal(int age = 2, int weight = 5) :itsAge(age), itsWeight(weight) { std::cout << "Mammal Constructor. \n"; }
 
-	//accessors
-	int GetAge() const { return itsAge; }
-	void SetAge(int age) { itsAge = age; }
-	int GetWeight()const { return itsWeight; }
-	void SetWeight(int weight) { itsWeight = weight; };
+// 	//#13: VIRTUAL COPY CONSTRUCTOR implementation using a COPY CONSTRUCTOR and a VIRTUAL CLONE() METHOD:
+// 	Mammal(const Mammal & rhs) : itsAge(rhs.GetAge()) { std::cout << "Mammal Copy Construct\n" ; }
 
-	//other methods
-	virtual void Speak() const { std::cout << "Mammal makes sound of: Pfff-Pfff"<<"\n"; } //#12: Virtual methods
-	void Sleep() const { std::cout << "Mammal makes sound when sleeping: Zzz-Zzz" << "\n"; }
+// 	virtual Mammal* Clone() { return new Mammal(*this); std::cout << "Mammal Virtrual Copy Construct\n";}
 
-protected:
-	int itsAge;
-	int itsWeight;
-};
+// 	virtual ~Mammal() { std::cout << "Mammal Destructor. \n"; }
+
+// 	//accessors
+// 	int GetAge() const { return itsAge; }
+// 	void SetAge(int age) { itsAge = age; }
+// 	int GetWeight()const { return itsWeight; }
+// 	void SetWeight(int weight) { itsWeight = weight; };
+
+// 	//other methods
+// 	virtual void Speak() const { std::cout << "Mammal makes sound of: Pfff-Pfff"<<"\n"; } //#12: Virtual methods
+// 	void Sleep() const { std::cout << "Mammal makes sound when sleeping: Zzz-Zzz" << "\n"; }
+
+// protected:
+// 	int itsAge;
+// 	int itsWeight;
+// };
+
+
 
 class Dog : public Mammal
 {
@@ -58,6 +64,8 @@ protected:
 	BREED itsBreed;
 };
 
+
+
 class BentleyBear : public Dog
 {
 public:
@@ -83,6 +91,7 @@ public:
 	}
 
 };
+
 
 
 int main()
