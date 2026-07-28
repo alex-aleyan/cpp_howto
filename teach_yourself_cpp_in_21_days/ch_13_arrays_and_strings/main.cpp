@@ -1,18 +1,19 @@
 #include <iostream>
+#include "Cat.h"
 
-class Cat
-{
-public:
-	Cat() { itsAge = 1; itsWeight = 5;}
-	~Cat(){}
-	int GetAge() const { return itsAge; }
-	int GetWeight() const { return itsWeight; }
-	void SetAge(int age) { itsAge = age; }
-	void SetWeight(int weight) { itsWeight = weight; }
-private:
-	int itsAge;
-	int itsWeight;
-};
+// class Cat
+// {
+// public:
+// 	Cat() { itsAge = 1; itsWeight = 5;}
+// 	~Cat(){}
+// 	int GetAge() const { return itsAge; }
+// 	int GetWeight() const { return itsWeight; }
+// 	void SetAge(int age) { itsAge = age; }
+// 	void SetWeight(int weight) { itsWeight = weight; }
+// private:
+// 	int itsAge;
+// 	int itsWeight;
+// };
 
 /*
 #ifdef _MSC_VER
