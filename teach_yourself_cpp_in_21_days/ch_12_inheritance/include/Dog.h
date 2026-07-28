@@ -11,7 +11,7 @@ class Dog : public Mammal
 public:
     //Attributes: Constructors
     //Dog() : itsBreed(GOLDEN) { std::cout << "Dog Constructor. \n"; }
-    Dog(BREED breed) ;
+    Dog(BREED breed );
 
     //#13: VIRTUAL COPY CONSTRUCTOR implementation using a COPY CONSTRUCTOR and a VIRTUAL CLONE() METHOD:
     Dog(const Mammal & rhs);

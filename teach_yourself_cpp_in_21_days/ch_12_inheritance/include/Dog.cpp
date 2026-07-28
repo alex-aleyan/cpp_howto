@@ -11,7 +11,7 @@ Dog::Dog(const Mammal & rhs) : Mammal(rhs) { std::cout << "Dog Copy Construct\n"
 
 //Attributes: Accessors
 BREED Dog::GetBreed() const     { return itsBreed; }
-void Dog::SetBreed(BREED breed) { itsBreed = breed; }
+void  Dog::SetBreed(BREED breed) { itsBreed = breed; }
 
 //Attributes: Other Methods
 void         Dog::WagTail()     { std::cout << "Tail goes: Shuh-shuh-shuh... \n"; }

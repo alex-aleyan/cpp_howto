@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+
 #include "Mammal.h"
 #include "Dog.h"
+#include "BentleyBear.h"
 
 
 // class Mammal
@@ -64,31 +66,31 @@ using namespace std;
 
 
 
-class BentleyBear : public Dog
-{
-public:
-	//BentleyBear() : Dog(NUISANCE) { std::cout << "BentleyBear Constructor. \n"; }
-	BentleyBear(int age = 5) : Dog(NUISANCE) { this->itsAge = age;  std::cout << "BentleyBear Constructor. \n"; }
+// class BentleyBear : public Dog
+// {
+// public:
+// 	//BentleyBear() : Dog(NUISANCE) { std::cout << "BentleyBear Constructor. \n"; }
+// 	BentleyBear(int age = 5) : Dog(NUISANCE) { this->itsAge = age;  std::cout << "BentleyBear Constructor. \n"; }
 
-		//#13: VIRTUAL COPY CONSTRUCTOR implementation using a COPY CONSTRUCTOR and a VIRTUAL CLONE() METHOD:
-		BentleyBear(const Mammal & rhs) : Dog(rhs) { std::cout << "BentleyBear Copy Construct\n"; };
-		virtual Mammal* Clone() { return new BentleyBear(*this); std::cout << "BentleyBear Virtrual Copy Construct\n"; }
+// 		//#13: VIRTUAL COPY CONSTRUCTOR implementation using a COPY CONSTRUCTOR and a VIRTUAL CLONE() METHOD:
+// 		BentleyBear(const Mammal & rhs) : Dog(rhs) { std::cout << "BentleyBear Copy Construct\n"; };
+// 		virtual Mammal* Clone() { return new BentleyBear(*this); std::cout << "BentleyBear Virtrual Copy Construct\n"; }
 
-	virtual ~BentleyBear() { std::cout << "BentleyBear Destructor. \n"; }
+// 	virtual ~BentleyBear() { std::cout << "BentleyBear Destructor. \n"; }
 	
-	//Attributes: Other Methods
-	virtual void Speak() const //#12: Virtual methods
-	{ 
-		Dog::Speak(); // #10: See, we provide an enriched version of the Speak since Bentley is extra annoying in his barking!!!
-		std::cout << ". Woooooooooooooooooooooooof!!! Wauw-wauw-wauw-wauw." << "\n"; 
-	}
+// 	//Attributes: Other Methods
+// 	virtual void Speak() const //#12: Virtual methods
+// 	{ 
+// 		Dog::Speak(); // #10: See, we provide an enriched version of the Speak since Bentley is extra annoying in his barking!!!
+// 		std::cout << ". Woooooooooooooooooooooooof!!! Wauw-wauw-wauw-wauw." << "\n"; 
+// 	}
 
-	virtual void begForIceCube() const //#12: Virtual methods
-	{
-		std::cout << "Gimme an ice cube, you, sucker!" << "\n";
-	}
+// 	virtual void begForIceCube() const //#12: Virtual methods
+// 	{
+// 		std::cout << "Gimme an ice cube, you, sucker!" << "\n";
+// 	}
 
-};
+// };
 
 
 
