@@ -1,9 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "Mammal.h"
-
-enum BREED {GOLDEN, CAIRN, DANDIE, SHETLAND, DOBERMAN, LAB, NUISANCE};
-
+#include "Dog.h"
 
 
 // class Mammal
@@ -37,32 +35,32 @@ enum BREED {GOLDEN, CAIRN, DANDIE, SHETLAND, DOBERMAN, LAB, NUISANCE};
 
 
 
-class Dog : public Mammal
-{
-public:
-	//Attributes: Constructors
-	//Dog() : itsBreed(GOLDEN) { std::cout << "Dog Constructor. \n"; }
-	Dog(BREED breed = LAB) : itsBreed(breed) { std::cout << "Dog Constructor. \n"; }
+// class Dog : public Mammal
+// {
+// public:
+// 	//Attributes: Constructors
+// 	//Dog() : itsBreed(GOLDEN) { std::cout << "Dog Constructor. \n"; }
+// 	Dog(BREED breed = LAB) : itsBreed(breed) { std::cout << "Dog Constructor. \n"; }
 
-		//#13: VIRTUAL COPY CONSTRUCTOR implementation using a COPY CONSTRUCTOR and a VIRTUAL CLONE() METHOD:
-		Dog(const Mammal & rhs) : Mammal(rhs) { std::cout << "Dog Copy Construct\n"; };
-		virtual Mammal* Clone() { return new Dog(*this); std::cout << "Dog Virtrual Copy Construct\n"; }
+// 		//#13: VIRTUAL COPY CONSTRUCTOR implementation using a COPY CONSTRUCTOR and a VIRTUAL CLONE() METHOD:
+// 		Dog(const Mammal & rhs) : Mammal(rhs) { std::cout << "Dog Copy Construct\n"; };
+// 		virtual Mammal* Clone() { return new Dog(*this); std::cout << "Dog Virtrual Copy Construct\n"; }
 
-	virtual ~Dog() { std::cout << "Dog Destructor. \n"; }
+// 	virtual ~Dog() { std::cout << "Dog Destructor. \n"; }
 
-	//Attributes: Accessors
-	BREED GetBreed() const { return itsBreed; }
-	void SetBreed(BREED breed) { itsBreed = breed; }
+// 	//Attributes: Accessors
+// 	BREED GetBreed() const { return itsBreed; }
+// 	void SetBreed(BREED breed) { itsBreed = breed; }
 
-	//Attributes: Other Methods
-	void WagTail() { std::cout << "Tail goes: Shuh-shuh-shuh... \n"; }
-	void BegForFood() { std::cout << "Gimme some food, human. \n"; }
-	virtual void Speak() const { std::cout << "Woof, woof." << "\n"; }//#12: Virtual methods
+// 	//Attributes: Other Methods
+// 	void WagTail() { std::cout << "Tail goes: Shuh-shuh-shuh... \n"; }
+// 	void BegForFood() { std::cout << "Gimme some food, human. \n"; }
+// 	virtual void Speak() const { std::cout << "Woof, woof." << "\n"; }//#12: Virtual methods
 	
-protected:
-	//Member Variable:
-	BREED itsBreed;
-};
+// protected:
+// 	//Member Variable:
+// 	BREED itsBreed;
+// };
 
 
 
