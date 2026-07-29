@@ -1,5 +1,8 @@
 #include <fstream>
 #include <iostream>
+#include <string>
+#include <cstring>
+
 using namespace std;
 
 //#L17.20
@@ -21,10 +24,12 @@ private:
 
 int main(int argc, char **argv)
 {
+    std::string fileName;
+    std::string textFileExtension = ".txt";
 
-	char fileName[80];
+	//char fileName[80];
 	char buffer[255];
-	char textFileExtension[] = ".txt";
+	//char textFileExtension[] = ".txt";
 	char excelFileExtension[] = ".csv";
 	
 	cout << "File Name: ";
@@ -32,7 +37,8 @@ int main(int argc, char **argv)
 
 	printf("The size is %d\n", sizeof(fileName));
 	//strcat_s("someString" or &addressOfArray, int sizeOfArray, "textToConcatenate"
-	strcat_s(fileName, sizeof(fileName), textFileExtension);
+	//strcat_s(fileName, sizeof(fileName), textFileExtension);
+	fileName += textFileExtension;
 
 	ofstream fout(fileName, ios::app);
 		fout << "This line is written directly to the file and you entered: \n";
@@ -97,7 +103,7 @@ int main(int argc, char **argv)
 	fin1.close();
 
 
-	system("pause");
+	system("sleep 1");
 	return 0;
 
 }
