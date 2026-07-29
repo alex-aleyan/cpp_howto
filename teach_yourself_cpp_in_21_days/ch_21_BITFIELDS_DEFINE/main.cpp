@@ -113,8 +113,8 @@ int main()
 	ASSERT(x == 5); //		evaluates to false; action is taken!
 
 	int *ptr = &a;
-	PRINT(ptr);
-	PRINT(*ptr);
+	//PRINT(ptr); // FIXME: uncomment and resolve
+	//PRINT(*ptr);// FIXME: uncomment and resolve
 
 //	#3:
 	StudentCT Jim;
@@ -123,7 +123,7 @@ int main()
 	cout << "Jim.getStatus (1:FullTime, 2:PartTime): " << Jim.getStatus() << endl;
 
 	cout << "Done." << endl;
-	system("pause");
+	system("sleep 1");
 	return 0;
 
 }
