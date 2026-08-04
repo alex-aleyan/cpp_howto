@@ -18,7 +18,7 @@ using namespace std;
  
  
  // #8.1:
- void Intrude(Array<int> theArray)
+ void Intrude(Array<int> theArray) // Friend function
  {
      std::cout << std::endl << "*** Intrude ***" << std::endl;
      for (int i = 0; 
@@ -30,21 +30,21 @@ using namespace std;
 
 
 
-//// // #8.2:
-//// template <class T>
-//// ostream& operator<< (ostream& output, Array<T>& theArray)
-//// {
-////     for (int i = 0; i < theArray.itsSize; i++)
-////         output << "[" << i << "]" << theArray[i] << endl;
-////     return output;
-//// }
-//// 
-//// 
-//// 
-//// 
-//// 
-//// 
-//// 
+// // #8.2:
+// template <class T>
+// ostream& operator<< (ostream& output, Array<T>& theArray)
+// {
+//     for (int i = 0; i < theArray.itsSize; i++)
+//         output << "[" << i << "]" << theArray[i] << endl;
+//     return output;
+// }
+
+
+
+
+
+
+
 //// // #11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //// //11.1.i VECTORs:
 //// 
@@ -183,14 +183,14 @@ int main()
 
 
 
-   // #8.1, now using the friend function:
-   cout << " #8.1 using the friend function to find the members of Array<int>";
-   Intrude(theArray);
+    // #8.1, now using the friend function:
+    cout << " #8.1 using the friend function to find the members of Array<int>";
+    Intrude(theArray);
 
-//    cout << endl << "DONE 8.1" << endl << endl;
-//     
-//    cout << theArray << endl;
-//
+    cout << endl << "DONE 8.1" << endl << endl;
+     
+    cout << theArray << endl;
+
 //    cout << endl << "DONE 8.2" << endl;
 //
 //    cout << "itsNumberArrays: " << Array<Animal>::GetNumberArrays() << endl;

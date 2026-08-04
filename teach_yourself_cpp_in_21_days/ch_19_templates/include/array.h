@@ -40,6 +40,26 @@ class Array
                       << typeid(T).name() 
                       << ">"
                       << std::endl; }
+
+        // #8.2:
+        // ostream&  operator<<( Array<T>&  theArray)
+        // {
+        //     ostream&    output;
+        //     //ostream&    output;
+        //     for (int i = 0; i < theArray.itsSize; i++)
+        //         output << "[" << i << "]" << theArray[i] << endl;
+        //     return output;
+        // }
+
+
+        friend ostream& operator<< (ostream& output, Array<T>& theArray)
+        {
+            for (int i = 0; i < theArray.itsSize; i++)
+                output << "operator<<(): theArray[" << i << "]=" << theArray[i] << endl;
+            return output;
+        }
+
+
     private:
         T *pType;
         int itsSize;
@@ -129,5 +149,11 @@ Array<T>& Array<T>::operator=(const Array &rhs) // return type: Array<T>&, opera
     }
     return *this;
 }
+
+
+
+
+
+
 
 #endif
