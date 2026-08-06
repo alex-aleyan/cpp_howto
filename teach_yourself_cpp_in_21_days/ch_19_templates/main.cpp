@@ -8,133 +8,9 @@
 #include <animal.h>
 #include <student.h>
 
-//funct prototype:
-#include<map>
+#include <map>
 
 using namespace std;
-
- 
- 
- // #8.1:
- void Intrude(Array<int> theArray) // Friend function
- {
-     std::cout << std::endl << "*** Intrude ***" << std::endl;
-     for (int i = 0; 
-              i < theArray.itsSize; 
-              i++)
-         cout << "Intrude(): theArray.pType[" << i << "]=" << theArray.pType[i] << endl;
-     cout << endl;
- }
-
-
-
-// // #8.2:
-// template <class T>
-// ostream& operator<< (ostream& output, Array<T>& theArray)
-// {
-//     for (int i = 0; i < theArray.itsSize; i++)
-//         output << "[" << i << "]" << theArray[i] << endl;
-//     return output;
-// }
-
-
-
-
-
-
-
-//// // #11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-//// //11.1.i VECTORs:
-//// 
-//// class Student
-//// {
-//// public:
-////     Student(); // Default construct
-////     Student(const string& name, const int age);
-////     Student(const Student& rhs); // Copy Construct
-////     ~Student();
-//// 
-////     void SetName(const string& name);
-////     string GetName() const; // can't change private members!
-//// 
-////     void SetAge(const int age);
-////     int GetAge() const;
-//// 
-////     Student& operator=(const Student& rhs);
-//// 
-//// private:
-////     string itsName;
-////     int itsAge;
-//// };
-//// 
-//// //Default Construct
-//// Student::Student() : 
-////     itsName("New Student"),
-////     itsAge(16)
-//// {}
-//// 
-//// 
-//// Student::Student(const string& name, const int age) :
-////     itsName(name),
-////     itsAge(age)
-//// {}
-//// 
-//// Student::Student(const Student& rhs) :
-////     itsName(rhs.GetName()), itsAge(rhs.GetAge())
-//// {}
-//// 
-//// Student::~Student()
-//// {}
-//// 
-//// void Student::SetName(const string& name)
-//// {
-////     itsName = name;
-//// }
-//// 
-//// string Student::GetName() const
-//// {
-////     return itsName;
-//// }
-//// 
-//// void Student::SetAge(const int age)
-//// {
-////     itsAge = age;
-//// }
-//// 
-//// int Student::GetAge() const
-//// {
-////     return itsAge;
-//// }
-//// 
-//// Student& Student::operator=(const Student& rhs)
-//// {
-////     itsName = rhs.GetName();
-////     itsAge = rhs.GetAge();
-////     return *this;
-//// }
-//// 
-//// ostream& operator<<(ostream& os, const Student& rhs)    
-//// {
-////     os << rhs.GetName() << " is " << rhs.GetAge() << " years old";
-////     return os;
-//// }
-//// 
-//// template<class T> // the function below is to be a template:
-//// void ShowVector(const vector<T>& v);
-//// 
-//// typedef vector<Student> SchoolClass;
-//// 
-//// //11.1.ii LIST Container:
-//// typedef list <int> IntegerList;
-
-//11.2.i    MAP Container:
-
-
-// // Template Function (type adoptive function!):
-// template<class KeyType, class ObjectType>
-// void ShowMap(const map<KeyType, ObjectType>& vec); // <keyType, objectType>
-// typedef map<string, Student> MapClass;
-
 
 
 int main()
@@ -247,36 +123,9 @@ int main()
     historyClass[George.GetName()] = George;
 
     cout << "historyClass : " << endl;
-//    ShowMap(historyClass);
+    ShowMap(historyClass);
     cout << "We know that " << historyClass["Mike"].GetName() << " is " << historyClass["Mike"].GetAge() << " years old." << endl;
 
     system("pause");
     return 0;
 }
-
-// template<class T>
-// void ShowVector(const vector<T>& vec)
-// {
-//     cout << " max_size() = " << vec.max_size();
-//     cout << "\tsize() = " << vec.size();
-//     cout << "\tcapacity() =" << vec.capacity();
-//     cout << "\t" << vec.empty() ? "empty" : "not empty"; // if vec.empty() returns true, then use "empty" as a string to cout, else use "not empty"
-//     cout << endl;
-// 
-//     for (unsigned int i = 0; i < vec.size(); ++i)
-//         cout << vec[i] << endl;
-// 
-//     cout << endl;
-// }
-
-// //11.2.i    MAP Container:
-// template<class KeyType, class ObjectType>
-// void ShowMap(const map<KeyType, ObjectType>& vec)
-// {
-//     for (typename map<KeyType, ObjectType>::const_iterator ci = vec.begin(); ci != vec.end(); ++ci)
-//         cout << ci->first << ": " << ci->second << endl;
-
-//     cout << endl;
-// }
-
-

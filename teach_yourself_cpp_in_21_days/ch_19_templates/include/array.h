@@ -151,8 +151,16 @@ Array<T>& Array<T>::operator=(const Array &rhs) // return type: Array<T>&, opera
 }
 
 
-
-
+// #8.1:
+void Intrude(Array<int> theArray) // Friend function
+{
+    std::cout << std::endl << "*** Intrude ***" << std::endl;
+    for (int i = 0; 
+             i < theArray.itsSize; 
+             i++)
+        cout << "Intrude(): theArray.pType[" << i << "]=" << theArray.pType[i] << endl;
+    cout << endl;
+}
 
 
 
