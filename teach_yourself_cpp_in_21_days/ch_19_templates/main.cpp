@@ -6,15 +6,13 @@
 
 #include <array.h>
 #include <animal.h>
+#include <student.h>
+
+//funct prototype:
+#include<map>
 
 using namespace std;
 
-
- 
- 
- 
- 
- 
  
  
  // #8.1:
@@ -128,17 +126,14 @@ using namespace std;
 //// 
 //// //11.1.ii LIST Container:
 //// typedef list <int> IntegerList;
-//// 
-//// //11.2.i    MAP Container:
-//// 
-//// //funct prototype:
-//// #include<map>
-//// 
-//// // Template Function (type adoptive function!):
-//// template<class T, class A>
-//// void ShowMap(const map<T, A>& vec); // <keyType, objectType>
-//// 
-//// typedef map<string, Student> MapClass;
+
+//11.2.i    MAP Container:
+
+
+// // Template Function (type adoptive function!):
+// template<class KeyType, class ObjectType>
+// void ShowMap(const map<KeyType, ObjectType>& vec); // <keyType, objectType>
+// typedef map<string, Student> MapClass;
 
 
 
@@ -191,72 +186,72 @@ int main()
      
     cout << theArray << endl;
 
-//    cout << endl << "DONE 8.2" << endl;
-//
-//    cout << "itsNumberArrays: " << Array<Animal>::GetNumberArrays() << endl;
-//
-//    // #11, STL:
-//    cout << " #11 STL vector:";
-//
-//    Student Harry("Harry", 15);
-//    Student Marry("Marry", 16);
-//    Student Peter("Pete", 16);
-//    Student Nikolas("Nick", 16);
-//
-//    SchoolClass TenthGrade(3);
-//    cout << "TenthGrade: " << endl; ShowVector(TenthGrade); 
-//    cout << endl;
-//
-//    TenthGrade[0] = Harry;
-//    TenthGrade[1] = Marry;
-//    TenthGrade[2] = Peter;
-//
-//    cout << "TenthGrade after adding Harry, Marry and Pete: " << endl; ShowVector(TenthGrade);
-//
-//    TenthGrade.push_back(Nikolas);
-//    cout << "TenthGrade after adding Nick: " << endl; ShowVector(TenthGrade);
-//
-//    TenthGrade[2].SetName("Peter");
-//    TenthGrade[3].SetName("Nickolas");
-//    cout << "TenthGrade after Pete wants to be Peter and Nick wants to be Nickolas: " << endl; ShowVector(TenthGrade);
-//
-//    cout << " #11 STL list:" << endl;
-//
-//    typedef list<int> IntegerList;
-//
-//    IntegerList intList;
-//
-//    for (int i = 1; i <= 10; ++i)
-//        intList.push_back(i * 2);
-//
-//    for (IntegerList::const_iterator ci = intList.begin(); ci != intList.end(); ++ci) //.end() returns the address of one iteration past the last node!!!
-//        cout << *ci << " " << endl;
-//
-//    //11.ii LIST Container:
-//    IntegerList intListii;
-//
-//    for (int i = 1; i <= 10; ++i)
-//        intList.push_back(i * 2);
-//
-//    for (IntegerList::const_iterator ci = intListii.begin(); ci != intListii.end(); ++ci)
-//        cout << *ci << " ";
-//
-//    //11.2.i    MAP Container:
-//    Student Mike("Mike", 18);
-//    Student Lisa("Lisa", 15);
-//    Student George("George", 17);
-//
-//    MapClass historyClass;
-//    historyClass[Mike.GetName()] = Mike;
-//    historyClass[Lisa.GetName()] = Lisa;
-//    historyClass[George.GetName()] = George;
-//
-//    cout << "historyClass : " << endl;
+    cout << endl << "DONE 8.2" << endl;
+
+    cout << "itsNumberArrays: " << Array<Animal>::GetNumberArrays() << endl;
+
+    // #11, STL:
+    cout << " #11 STL vector:";
+
+    Student Harry("Harry", 15);
+    Student Marry("Marry", 16);
+    Student Peter("Pete", 16);
+    Student Nikolas("Nick", 16);
+
+    SchoolClass TenthGrade(3);
+    cout << "TenthGrade: " << endl; ShowVector(TenthGrade); 
+    cout << endl;
+
+    TenthGrade[0] = Harry;
+    TenthGrade[1] = Marry;
+    TenthGrade[2] = Peter;
+
+    cout << "TenthGrade after adding Harry, Marry and Pete: " << endl; ShowVector(TenthGrade);
+
+    TenthGrade.push_back(Nikolas);
+    cout << "TenthGrade after adding Nick: " << endl; ShowVector(TenthGrade);
+
+    TenthGrade[2].SetName("Peter");
+    TenthGrade[3].SetName("Nickolas");
+    cout << "TenthGrade after Pete wants to be Peter and Nick wants to be Nickolas: " << endl; ShowVector(TenthGrade);
+
+    cout << " #11 STL list:" << endl;
+
+    typedef list<int> IntegerList;
+
+    IntegerList intList;
+
+    for (int i = 1; i <= 10; ++i)
+        intList.push_back(i * 2);
+
+    for (IntegerList::const_iterator ci = intList.begin(); ci != intList.end(); ++ci) //.end() returns the address of one iteration past the last node!!!
+        cout << *ci << " " << endl;
+
+    //11.ii LIST Container:
+    IntegerList intListii;
+
+    for (int i = 1; i <= 10; ++i)
+        intList.push_back(i * 2);
+
+    for (IntegerList::const_iterator ci = intListii.begin(); ci != intListii.end(); ++ci)
+        cout << *ci << " ";
+
+    //11.2.i    MAP Container:
+    Student Mike("Mike", 18);
+    Student Lisa("Lisa", 15);
+    Student George("George", 17);
+
+    MapClass historyClass;
+    historyClass[Mike.GetName()] = Mike;
+    historyClass[Lisa.GetName()] = Lisa;
+    historyClass[George.GetName()] = George;
+
+    cout << "historyClass : " << endl;
 //    ShowMap(historyClass);
-//    cout << "We know that " << historyClass["Mike"].GetName() << " is " << historyClass["Mike"].GetAge() << " years old." << endl;
-//
-//    system("pause");
-//    return 0;
+    cout << "We know that " << historyClass["Mike"].GetName() << " is " << historyClass["Mike"].GetAge() << " years old." << endl;
+
+    system("pause");
+    return 0;
 }
 
 // template<class T>
@@ -273,13 +268,15 @@ int main()
 // 
 //     cout << endl;
 // }
-// 
+
 // //11.2.i    MAP Container:
-// 
-// template<class T, class A>
-// void ShowMap(const map<T, A>& vec)
+// template<class KeyType, class ObjectType>
+// void ShowMap(const map<KeyType, ObjectType>& vec)
 // {
-//     for (map<T, A>::const_iterator ci = vec.begin(); ci != vec.end(); ++ci)
+//     for (typename map<KeyType, ObjectType>::const_iterator ci = vec.begin(); ci != vec.end(); ++ci)
 //         cout << ci->first << ": " << ci->second << endl;
+
 //     cout << endl;
 // }
+
+
